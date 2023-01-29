@@ -15,8 +15,7 @@ import (
 
 func main() {
 	ch := make(chan int)
-	stop := make(chan struct{}) // дополнительный канал опроcник, типа struct{} -> пустая структура с 0 полей
-	//defer close(ch)
+	stop := make(chan struct{}) // дополнительный канал опроcник типа struct{} -> пустая структура с 0 полей, занимает 0 бит памяти
 
 	go func() {
 		for {
