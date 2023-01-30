@@ -18,11 +18,12 @@ import (
 )
 
 func main() {
-	str, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	str = str[:len(str)-2]
-	split := strings.Split(str, " ")
-	res := ""
+	str, _ := bufio.NewReader(os.Stdin).ReadString('\n') // считываем с консоли строку до спец. символа - окончания строки
+	str = str[:len(str)-2]                               // удаляем 2 последних символа (/r - возврат каретки и /n - перенос строки
+	split := strings.Split(str, " ")                     // разбиваем строку на срез строк с разделителем в виде пробела
+	res := ""                                            // накопительная переменная
 
+	// циклом проходимся по срезу строк справа налево, конкатенируя строка к строке, если элемент не последний -> добавляем пробел
 	for i := len(split) - 1; i >= 0; i-- {
 		res += split[i]
 		if i < len(split) {

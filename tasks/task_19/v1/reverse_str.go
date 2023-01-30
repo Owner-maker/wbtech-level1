@@ -14,10 +14,11 @@ import (
 */
 
 func main() {
-	str, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	runes := []rune(str)
-	res := ""
+	str, _ := bufio.NewReader(os.Stdin).ReadString('\n') // считываем с консоли строку до спец. символа - окончания строки
+	runes := []rune(str)                                 // кастим строку в срезу рун
+	res := ""                                            // накопительная переменная
 
+	// проходимся циклом по срезу рун начиная справа налево, конкатинируя строка к строке (элемент среза рун кастим также к строке)
 	for i := len(runes) - 1; i >= 0; i-- {
 		res += string(runes[i])
 	}
