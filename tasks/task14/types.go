@@ -6,11 +6,13 @@ import "fmt"
 Разработать программу, которая в рантайме способна определить тип
 переменной: int, string, bool, channel из переменной типа interface{}.
 
-1ый вариант: с использованием конструкции switch
+C использованием конструкции switch
 */
 
 func printType(value interface{}) {
+	// используя конструкцию switch и ключевое слово type динамически определяем тип данных входного параметра value
 	switch v := value.(type) {
+	// далее рассматриваем по отдельности каждый случай
 	case int:
 		fmt.Printf("type = \"%T\" and value = %v", v, v)
 	case string:
